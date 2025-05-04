@@ -1,32 +1,136 @@
 #include <stdio.h>
 
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
-
 int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
+    int peca, movimentos, direcao, repeticao = 1;
 
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
 
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
+    printf("Bem vindo ao jogo de Peças de Xadrez\n");
+    printf("Digite qual peça você deseja movimentar:\n");
+    printf("1. Bispo \n2. Torre \n3. Rainha\n");
+    scanf("%d", &peca);
+    
+    printf("Agora, qual direção a peça deverá ir:\n");
+    printf("1. Cima \n2. Baixo \n3. Esquerda \n4. Direita\n");
+    scanf("%d", &direcao);
 
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
+    printf("Por último, escreva quantas casas a peça deverá andar:\n");
+    scanf("%d", &movimentos);
 
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
+    if(direcao >= 1 && direcao <=4){
+            
+        switch (peca)
+        {
+        case 1:
+            if(direcao == 1){
 
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
+                for(repeticao = 1; repeticao <= movimentos; repeticao++){
+                    printf("Bispo andou para cima\n");
 
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
+                }
+            }else if (direcao == 2){
+
+                for(repeticao = 1; repeticao <= movimentos; repeticao++){
+                    printf("Bispo andou para baixo\n");
+
+                }
+            }else if (direcao == 3){
+
+                for(repeticao = 1; repeticao <= movimentos; repeticao++){
+                    printf("Bispo andou para esquerda\n");
+
+                }
+            } else{
+
+                for(repeticao = 1; repeticao <= movimentos; repeticao++){
+                    printf("Bispo andou para direita\n");
+
+                }
+            }
+        break;
+
+        case 2:
+            if(direcao == 1){
+
+                while (repeticao <= movimentos)
+                {
+                    printf("Torre andou para cima\n");
+                    repeticao++;
+                }
+            
+            }else if (direcao == 2){
+
+                while (repeticao <= movimentos)
+                {
+                    printf("Torre andou para baixo\n");
+                    repeticao++;
+                }
+            
+            }else if (direcao == 3){
+
+                while (repeticao <= movimentos)
+                {
+                    printf("Torre andou para esquerda\n");
+                    repeticao++;
+                }
+            
+            } else{
+
+                while (repeticao <= movimentos)
+                {
+                    printf("Torre andou para direita\n");
+                    repeticao++;
+                }
+            
+        }
+        break;
+
+        case 3:
+            if(direcao == 1){
+
+                do{
+
+                    repeticao++;
+                    printf("Rainha andou para cima\n");
+
+                } while (repeticao <= movimentos);
+                
+            }else if (direcao == 2){
+
+                do{
+                    
+                    repeticao++;
+                    printf("Rainha andou para baixo\n");
+
+                } while (repeticao <= movimentos);
+
+            }else if (direcao == 3){
+
+                do{
+                    
+                    repeticao++;
+                    printf("Rainha andou para esquerda\n");
+
+                } while (repeticao <= movimentos);
+
+            } else{
+
+                do{
+                    
+                    repeticao++;
+                    printf("Rainha andou para direita\n");
+
+                } while (repeticao <= movimentos);
+            }
+            
+        break;
+
+        default:
+            printf("Você selecionou uma peça inválida\n");
+        break;
+        }
+    } else{
+        printf("Você digitou uma opção inválida de direção!\n");
+    }
 
     return 0;
 }
