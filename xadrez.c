@@ -1,136 +1,66 @@
 #include <stdio.h>
 
-int main() {
-    int peca, movimentos, direcao, repeticao = 1;
+int main(){
 
+    int escolha_pecas , i =1;
 
     printf("Bem vindo ao jogo de Peças de Xadrez\n");
-    printf("Digite qual peça você deseja movimentar:\n");
-    printf("1. Bispo \n2. Torre \n3. Rainha\n");
-    scanf("%d", &peca);
-    
-    printf("Agora, qual direção a peça deverá ir:\n");
-    printf("1. Cima \n2. Baixo \n3. Esquerda \n4. Direita\n");
-    scanf("%d", &direcao);
+    printf("Selecione a peça que será movimentada\n");
+    printf("1. Bispo\n2. Torre\n3. Rainha\n4. Cavalo\n");
+    scanf("%d", &escolha_pecas);
 
-    printf("Por último, escreva quantas casas a peça deverá andar:\n");
-    scanf("%d", &movimentos);
+    switch (escolha_pecas)
+    {
 
-    if(direcao >= 1 && direcao <=4){
-            
-        switch (peca)
+    case 1:
+        for(i; i <= 5; i++)
         {
-        case 1:
-            if(direcao == 1){
-
-                for(repeticao = 1; repeticao <= movimentos; repeticao++){
-                    printf("Bispo andou para cima\n");
-
-                }
-            }else if (direcao == 2){
-
-                for(repeticao = 1; repeticao <= movimentos; repeticao++){
-                    printf("Bispo andou para baixo\n");
-
-                }
-            }else if (direcao == 3){
-
-                for(repeticao = 1; repeticao <= movimentos; repeticao++){
-                    printf("Bispo andou para esquerda\n");
-
-                }
-            } else{
-
-                for(repeticao = 1; repeticao <= movimentos; repeticao++){
-                    printf("Bispo andou para direita\n");
-
-                }
-            }
-        break;
-
-        case 2:
-            if(direcao == 1){
-
-                while (repeticao <= movimentos)
-                {
-                    printf("Torre andou para cima\n");
-                    repeticao++;
-                }
-            
-            }else if (direcao == 2){
-
-                while (repeticao <= movimentos)
-                {
-                    printf("Torre andou para baixo\n");
-                    repeticao++;
-                }
-            
-            }else if (direcao == 3){
-
-                while (repeticao <= movimentos)
-                {
-                    printf("Torre andou para esquerda\n");
-                    repeticao++;
-                }
-            
-            } else{
-
-                while (repeticao <= movimentos)
-                {
-                    printf("Torre andou para direita\n");
-                    repeticao++;
-                }
-            
+            printf("Bispo andou para Cima e para Direita\n");
         }
-        break;
+    break;
+    
 
-        case 3:
-            if(direcao == 1){
+    case 2:
+        while (i <= 5)
+        {
+            printf("Torre andou para Direita\n");
+            i++;
+        }
+    break;
 
-                do{
 
-                    repeticao++;
-                    printf("Rainha andou para cima\n");
+    case 3:
+        do
+        {
+            i++;
+            printf("Rainha andou para Esquerda\n");
 
-                } while (repeticao <= movimentos);
-                
-            }else if (direcao == 2){
+        } while (i <= 8);
+    break;
 
-                do{
-                    
-                    repeticao++;
-                    printf("Rainha andou para baixo\n");
 
-                } while (repeticao <= movimentos);
+    case 4:
+        for(i; i < 2; i++)
+        {
+            int j = 0;
 
-            }else if (direcao == 3){
-
-                do{
-                    
-                    repeticao++;
-                    printf("Rainha andou para esquerda\n");
-
-                } while (repeticao <= movimentos);
-
-            } else{
-
-                do{
-                    
-                    repeticao++;
-                    printf("Rainha andou para direita\n");
-
-                } while (repeticao <= movimentos);
+            while (j < 3)
+            {
+                printf("Cavalo andou para Baixo\n");
+                j++;
             }
             
-        break;
 
-        default:
-            printf("Você selecionou uma peça inválida\n");
-        break;
+            printf("Cavalo andou para Esquerda \n");
         }
-    } else{
-        printf("Você digitou uma opção inválida de direção!\n");
+    break;
+
+
+    default:
+        printf("Opção inválida\n");
+    break;
     }
+
 
     return 0;
 }

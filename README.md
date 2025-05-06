@@ -23,7 +23,7 @@ No jogo, apenas possuímos movimentação para quatro direções, mas o Bispo se
    - Os valores necessários devem ser inseridos manualmente a partir de variáveis dentro do código.
    - Será permitido o uso de constantes para facilitar a escrita do código e evitar repetição de valores.
 2. **Estruturas de Repetição:**
-   - Os códigos precisam ser desenvolvidos utilizando estruturas de repetição.
+   - Os códigos precisam ser desenvolvidos utilizando estruturas de repetição. 
 3. **Saída de Dados:**
    - O sistema deve exibir os resultados de cada procedimento de forma clara e legível.
 
