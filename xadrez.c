@@ -1,5 +1,32 @@
 #include <stdio.h>
 
+void movimento_torre(casas){
+    if(casas > 0)
+    {
+    printf("Torre andou para Direita \n");
+    movimento_torre(casas - 1);
+    }
+}
+
+
+void movimento_bispo(casas){
+    if(casas > 0)
+    {
+    printf("Bispo andou para Direita \n");
+    printf("Bispo andou para Direita \n");
+    movimento_torre(casas - 1);
+    }
+}
+
+void movimento_rainha(casas){
+    if(casas > 0)
+    {
+    printf("Rainha andou para Esquerda \n");
+    movimento_torre(casas - 1);
+    }
+}
+
+
 int main(){
 
     int escolha_pecas , i =1;
@@ -13,29 +40,17 @@ int main(){
     {
 
     case 1:
-        for(i; i <= 5; i++)
-        {
-            printf("Bispo andou para Cima e para Direita\n");
-        }
+        movimento_bispo(5);
     break;
     
 
     case 2:
-        while (i <= 5)
-        {
-            printf("Torre andou para Direita\n");
-            i++;
-        }
+        movimento_torre(5);
     break;
 
 
     case 3:
-        do
-        {
-            i++;
-            printf("Rainha andou para Esquerda\n");
-
-        } while (i <= 8);
+        movimento_rainha(8);
     break;
 
 
@@ -44,7 +59,7 @@ int main(){
         {
             int j = 0;
 
-            while (j < 3)
+            while (j < 2)
             {
                 printf("Cavalo andou para Baixo\n");
                 j++;
